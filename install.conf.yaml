@@ -5,14 +5,19 @@
 
 - clean: ['~', '~/.config']
 
+- shell:
+    - ["mkdir -p ~/.config", "Creating config folder"]
+
 - link:
     ~/.zshrc:
         path: .zshrc
     ~/.p10k.zsh:
         path: .p10k.zsh
-    ~/.config/karabiner/karabiner.json:
+    ~/.config/karabiner:
         create: true
-        path: karabiner.json
+        force: true
+        path: config/karabiner/
+    ~/.dotfiles: ""
 
 - create:
     - ~/Projects

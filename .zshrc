@@ -31,3 +31,5 @@ zinit light zdharma/fast-syntax-highlighting
 # Setup theme
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+# Load custom scripts from dotfiles
+export PATH=~/.dotfiles/bin:${PATH}

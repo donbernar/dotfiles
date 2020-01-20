@@ -1,0 +1,21 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.zshrc:
+        path: .zshrc
+    ~/.p10k.zsh:
+        path: .p10k.zsh
+    ~/.config/karabiner/karabiner.json:
+        create: true
+        path: karabiner.json
+
+- create:
+    - ~/Projects
+
+- shell:
+    - ["git submodule update --init --recursive", "Installing submodules"]

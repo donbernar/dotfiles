@@ -9,10 +9,17 @@
     - ["mkdir -p ~/.config", "Creating config folder"]
 
 - link:
+    ~/Brewfile:
     ~/.zshrc:
         path: .zshrc
     ~/.p10k.zsh:
         path: .p10k.zsh
+    ~/.ackrc:
+        path: .ackrc
+    ~/.gitconfig:
+        path: .gitconfig
+    ~/.gitignore:
+        path: .gitignore
     ~/.config/karabiner:
         create: true
         force: true

@@ -33,3 +33,16 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Load custom scripts from dotfiles
 export PATH=~/.dotfiles/bin:${PATH}
+
+# Alias here:
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+
+# Custom functions
+
+# Find directory - looks for any children directory with real time search
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}

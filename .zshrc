@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Load custom scripts from dotfiles
+export PATH=~/.dotfiles/bin:${PATH}
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Powerlevel10k Setup
@@ -41,8 +44,7 @@ zinit snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 # Setup theme
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# Load custom scripts from dotfiles
-export PATH=~/.dotfiles/bin:${PATH}
+
 
 # Alias here:
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
@@ -52,7 +54,7 @@ alias gc='git commit'
 alias gco='git checkout'
 alias gm='git merge'
 alias gp='git pull'
-alias ggp='git push origin $(current_branch)'
+alias ggp="git push origin $(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')"
 
 # Custom functions
 

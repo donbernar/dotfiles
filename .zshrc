@@ -52,6 +52,7 @@ alias gc='git commit'
 alias gco='git checkout'
 alias gm='git merge'
 alias gp='git pull'
+alias ggp='git push origin $(current_branch)'
 
 # Custom functions
 

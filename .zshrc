@@ -38,13 +38,24 @@ zplugin snippet OMZ::lib/completion.zsh
 
 zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 
+# Options for forgit (interactive git)
+forgit_log=iglo
+forgit_diff=igd
+forgit_add=iga
+forgit_reset_head=igrh
+forgit_ignore=igi
+forgit_restore=igcf
+forgit_clean=igclean
+forgit_stash_show=igss
+
+# fzf git awesomeness
+zplugin light 'wfxr/forgit'
+
 zplugin ice wait"0" lucid
 zplugin snippet OMZ::lib/git.zsh
 zplugin ice wait"0" atload"unalias grv" lucid
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
 
-# fzf git awesomeness
-zplugin light 'wfxr/forgit'
 
 # Turn on completion system
 autoload -Uz compinit && compinit

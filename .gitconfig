@@ -1,5 +1,11 @@
 [user]
-	name = @donbernar
+	name = Alvaro Bernar
 	email = alvaro.bernar@gmail.com
+[github]
+	user = @donbernar
 [core]
 	excludesfile = /Users/donbernar/.gitignore
+[color]
+	ui = auto
+[credential]
+	helper = osxkeychain

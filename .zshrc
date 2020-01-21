@@ -26,7 +26,17 @@ autoload -Uz _zinit
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
+zinit light zsh-users/zsh-completions
 
+zinit snippet OMZ::plugins/osx/osx.plugin.zsh
+
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet OMZ::plugins/brew/brew.plugin.zsh
+zinit snippet OMZ::plugins/docker/_docker
+
+zinit snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
+# zinit snippet OMZ::plugins/tmux/tmux.plugin.zsh
+# zinit snippet OMZ::plugins/tmuxinator/tmuxinator.plugin.zsh
 
 # Setup theme
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -36,6 +46,12 @@ export PATH=~/.dotfiles/bin:${PATH}
 
 # Alias here:
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+alias gss='git status --short'
+alias ga='git add'
+alias gc='git commit'
+alias gco='git checkout'
+alias gm='git merge'
+alias gp='git pull'
 
 # Custom functions
 

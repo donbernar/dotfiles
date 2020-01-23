@@ -28,6 +28,8 @@
         create: true
         force: true
         path: .vim/
+    ~/.tmux.conf:
+        path: .tmux.conf 
     ~/.config/karabiner:
         create: true
         force: true

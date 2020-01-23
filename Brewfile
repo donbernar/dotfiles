@@ -42,7 +42,6 @@ cask 'slack'
 
 cask 'rectangle'
 # cask 'divvy'
-cask 'moom'
 
 tap 'homebrew/cask-fonts'
 

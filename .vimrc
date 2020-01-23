@@ -51,6 +51,8 @@ Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
 "{{ Configuring CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
+
+let g:ctrlp_show_hidden = 1
 "}}
 
 " Snippets related

@@ -11,6 +11,7 @@ brew 'fzf'
 brew 'ack'
 brew 'reattach-to-user-namespace'
 brew 'tmux'
+brew 'tmuxinator'
 brew 'macvim'
 
 cask_args appdir: "/Applications"

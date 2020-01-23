@@ -24,3 +24,7 @@ node_modules
 # Vim plugins related
 .vim/autoload/
 .vim/plugged/
+
+# Karabiner related
+config/karabiner/automatic_backups
+

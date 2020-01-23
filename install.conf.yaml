@@ -12,6 +12,8 @@
     ~/Brewfile:
     ~/.zshrc:
         path: .zshrc
+    ~/.aliases:
+        path: .aliases
     ~/.p10k.zsh:
         path: .p10k.zsh
     ~/.ackrc:
@@ -20,6 +22,12 @@
         path: .gitconfig
     ~/.gitignore:
         path: .gitignore
+    ~/.vimrc:
+        path: .vimrc
+    ~/.vim:
+        create: true
+        force: true
+        path: .vim/
     ~/.config/karabiner:
         create: true
         force: true

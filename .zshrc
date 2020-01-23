@@ -4,6 +4,19 @@
 # Load custom scripts from dotfiles
 export PATH=~/.dotfiles/bin:${PATH}
 
+# No need of using cd to move across directories
+setopt AUTO_CD
+
+# Setup Vim config from text-triumvirate
+export EDITOR="vim"
+bindkey -v 
+
+# vi style incremental search
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward  
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Powerlevel10k Setup
@@ -64,6 +77,9 @@ autoload -Uz compinit && compinit
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 
+# Import Aliases
+source $HOME/.aliases
+
 # Custom functions
 
 # Find directory - looks for any children directory with real time search
@@ -72,4 +88,11 @@ fd() {
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
+}
+
+opend() {
+  local dir
+  dir=$(find $HOME -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  code "$dir"
 }

@@ -9,6 +9,9 @@ brew 'zsh'
 # brew 'zsh-completions'
 brew 'fzf'
 brew 'ack'
+brew 'reattach-to-user-namespace'
+brew 'tmux'
+brew 'macvim'
 
 cask_args appdir: "/Applications"
 
@@ -38,6 +41,8 @@ cask 'postman'
 cask 'slack'
 
 cask 'rectangle'
+# cask 'divvy'
+cask 'moom'
 
 tap 'homebrew/cask-fonts'
 

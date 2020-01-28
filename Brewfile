@@ -13,6 +13,7 @@ brew 'reattach-to-user-namespace'
 brew 'tmux'
 brew 'tmuxinator'
 brew 'macvim'
+brew 'htop'
 
 cask_args appdir: "/Applications"
 

@@ -38,6 +38,7 @@
 
 - create:
     - ~/Projects
-
+    - ~/Logbook
 - shell:
     - ["git submodule update --init --recursive", "Installing submodules"]
+    - ["chmod u+x ~/.dotfiles/bin/tat", "Providing permission to tat script"]

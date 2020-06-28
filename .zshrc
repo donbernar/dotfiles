@@ -4,6 +4,8 @@
 # Load custom scripts from dotfiles
 export PATH=~/.dotfiles/bin:${PATH}
 
+export PATH=$(brew --prefix openvpn)/sbin:$PATH
+
 # No need of using cd to move across directories
 setopt AUTO_CD
 
@@ -96,3 +98,9 @@ opend() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   code "$dir"
 }
+
+. /usr/local/opt/asdf/asdf.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

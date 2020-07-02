@@ -42,3 +42,5 @@
 - shell:
     - ["git submodule update --init --recursive", "Installing submodules"]
     - ["chmod u+x ~/.dotfiles/bin/tat", "Providing permission to tat script"]
+    - ["/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"", "Installing Brew"]
+    - ["curl -o- https://raw.githukusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash", "Installing nvm"]

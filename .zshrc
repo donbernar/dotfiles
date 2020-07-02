@@ -1,10 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Load custom scripts from dotfiles
 export PATH=~/.dotfiles/bin:${PATH}
-
-export PATH=$(brew --prefix openvpn)/sbin:$PATH
 
 # No need of using cd to move across directories
 setopt AUTO_CD
@@ -42,16 +47,16 @@ autoload -Uz _zinit
 
 # Zinit plugins
 
-zplugin light zsh-users/zsh-autosuggestions
-zplugin light zdharma/fast-syntax-highlighting
-zplugin light zsh-users/zsh-completions
-zplugin light zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-history-substring-search
 
 # ohmyzsh fuzzy completion
-zplugin snippet OMZ::lib/completion.zsh
+zinit snippet OMZ::lib/completion.zsh
 
 
-zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
+zinit snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 
 # Options for forgit (interactive git)
 forgit_log=iglo
@@ -64,19 +69,19 @@ forgit_clean=igclean
 forgit_stash_show=igss
 
 # fzf git awesomeness
-zplugin light 'wfxr/forgit'
+zinit light 'wfxr/forgit'
 
-zplugin ice wait"0" lucid
-zplugin snippet OMZ::lib/git.zsh
-zplugin ice wait"0" atload"unalias grv" lucid
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zinit ice wait"0" lucid
+zinit snippet OMZ::lib/git.zsh
+zinit ice wait"0" atload"unalias grv" lucid
+zinit snippet OMZ::plugins/git/git.plugin.zsh
 
 
 # Turn on completion system
 autoload -Uz compinit && compinit
 
 # Setup theme
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1; zinit load romkatv/powerlevel10k
 
 
 # Import Aliases
@@ -104,3 +109,6 @@ opend() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# AWS JT config
+export AWS_PROFILE="experimental"

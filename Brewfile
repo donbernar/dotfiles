@@ -35,6 +35,9 @@ brew 'kubernetes-cli'
 brew 'minikube'
 brew 'awscli@1'
 
+tap 'heroku/brew'
+brew 'heroku'
+
 tap 'mongodb/brew'
 brew 'mongodb-community'
 

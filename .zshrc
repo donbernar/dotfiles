@@ -47,9 +47,12 @@ autoload -Uz _zinit
 
 # Zinit plugins
 
+zinit ice proto"ssh"
+
 zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
+zinit ice proto"ssh"
 zinit light zsh-users/zsh-completions
+zinit ice proto"ssh"
 zinit light zsh-users/zsh-history-substring-search
 
 # ohmyzsh fuzzy completion
@@ -104,7 +107,7 @@ opend() {
   code "$dir"
 }
 
-. /usr/local/opt/asdf/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

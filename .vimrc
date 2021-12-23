@@ -13,6 +13,14 @@ set nocompatible
 set encoding=utf-8
 filetype plugin indent on
 
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+
+" Remove c-a bind since it's used in tmux
+map <C-a> <nop>
+
 call plug#begin('~/.vim/plugged')
 "{{ Install solarized theme
 Plug 'micha/vim-colors-solarized'
@@ -29,8 +37,14 @@ Plug 'scrooloose/nerdtree'
   autocmd vimenter * NERDTree
   autocmd StdinReadPre * let s:std_in=1
   autocmd VimEnter * if argc() == 0 && !exists("s:stdn_in") | NERDTree | endif
+  " ---> close vim if only thing left is nerd-tree <---
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
   " ---> toggling nerd-tree using Ctrl-N <---
   map <C-n> :NERDTreeToggle<CR>
+"}}
+
+"{{ Configuring Vim Surround
+Plug 'tpope/vim-surround'
 "}}
 
 "{{ Configuring YouCompleteMe
@@ -79,6 +93,18 @@ Plug 'jiangmiao/auto-pairs'
 "{{ TMux - Vim integration
 Plug 'christoomey/vim-tmux-navigator'
 "}}
+" Vim and Tmux pane navigation integration
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr> 
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+" Write all buffers before navigating from Vim to tmux pane | 1 - current buffer if changed
+let g:tmux_navigator_save_on_switch = 2
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
 
 " Syntax related
 source ~/.vim/syntax.vim
@@ -114,5 +140,12 @@ let g:solarized_contrast = "high"
 " ---> If Iterm2 color palette is solarized <--- 
 let g:solarized_termcolors = 16
 let g:solarized_termtrans = 1
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
 
 colorscheme solarized

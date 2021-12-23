@@ -6,6 +6,8 @@ git clone ...
 ./dotfiles/install
 ```
 
+`brew bundle`
+
 ## Submodules
 
 To install a submodule:
@@ -34,6 +36,8 @@ git submodule update --init --remote dotbot
 
 ## Next steps
 * Create install steps in README.md
-* Export/Import Iterm2 configuration
-* Export/Import Alfred configuration
+* Export/Import Iterm2 configuration - DONE
+* Export/Import Alfred configuration - DONE
+* Export/Import Karabiner configuration - DONE
+* Move all MAC related scripts and config to a repo in order to have SO agnostic dotfiles
 
